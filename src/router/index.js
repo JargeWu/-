@@ -1,43 +1,37 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
-import MintUI from 'mint-ui'
-import 'mint-ui/lib/style.css'
 
 
 Vue.use(VueRouter)
-Vue.use(MintUI)
 
-const routes = [{
-		path: '/',
-		name: 'Home',
-		component: Home
-	},
+
+const routes = [
 	{
-		path: '/about',
-		name: 'About',
-		component: () => import('../views/About.vue')
+		path: '/',
+		name: 'index',
+		component: () => import('@/views/index.vue')
 	},
 	{
 		path: '/index',
 		name: 'index',
-		component: () => import('../views/index.vue')
+		component: () => import('@/views/index.vue')
 	},
 	{
-		path: '/app1',
-		name: 'app1',
-		component: () => import('../views/app1.vue')
+		path: '/order',
+		name: 'order',
+		component: () => import('@/views/order.vue')
 	},
 	{
-		path: '/app2',
-		name: 'app2',
-		component: () => import('../views/app2.vue')
+		path: '/setting',
+		name: 'setting',
+		component: () => import('@/views/setting.vue')
 	},
 	{
-		path: '/app3',
-		name: 'app3',
-		component: () => import('../views/app3.vue')
+		path: '/usersetting',
+		name: 'usersetting',
+		component: () => import('@/views/usersetting.vue')
 	},
+
 ]
 
 const router = new VueRouter({

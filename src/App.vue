@@ -1,53 +1,52 @@
 <template>
 	<div id="app">
-		<div id="nav">
-			<router-link to="/">Home</router-link> |
-			<router-link to="/about">About</router-link> |
-			<router-link to="/index">Index</router-link>
-		</div>
-		<el-container>
-			<el-header>Header</el-header>
-			<el-container>
-				<el-aside width="200px">
-					<el-row class="tac">
-						<el-col>
-							<el-menu default-active="2" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose" router>
-								<el-submenu index="1">
-									<template slot="title">
-										<i class="el-icon-location"></i>
-										<span>导航一</span>
-									</template>
-									
-										<el-menu-item index="/app1">选项1</el-menu-item>
-										<el-menu-item index="/app2">选项2</el-menu-item>
-										<el-menu-item index="/app3">选项3</el-menu-item>
-									
-								</el-submenu>
-								<el-menu-item index="/app4">
-									<i class="el-icon-menu"></i>
-									<span slot="title">导航二</span>
-								</el-menu-item>
-								<el-menu-item index="/app5" disabled>
-									<i class="el-icon-document"></i>
-									<span slot="title">导航三</span>
-								</el-menu-item>
-								<el-menu-item index="/app6">
-									<i class="el-icon-setting"></i>
-									<span slot="title">导航四</span>
-								</el-menu-item>
-							</el-menu>
-						</el-col>
 
-					</el-row>
-				</el-aside>
+		<el-container>
+			<el-aside width="200px">
+
+				<!-- <el-avatar shape="square" :size="100" fit="fit" src="https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg"></el-avatar> -->
+
+
+				<el-row class="tac">
+					<el-col>
+						<el-menu default-active="2" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose" router>
+							<el-menu-item index="/index">
+								<i class="el-icon-s-home"></i>
+								<span slot="title">首页概览</span>
+							</el-menu-item>
+
+							<el-menu-item index="/order">
+								<i class="el-icon-s-order"></i>
+								<span slot="title">订单管理</span>
+							</el-menu-item>
+							<el-menu-item index="/setting">
+								<i class="el-icon-menu"></i>
+								<span slot="title">预约设置</span>
+							</el-menu-item>
+							<el-menu-item index="/usersetting">
+								<i class="el-icon-user-solid"></i>
+								<span slot="title">用户设置</span>
+							</el-menu-item>
+
+
+						</el-menu>
+					</el-col>
+				</el-row>
+
+			</el-aside>
+			<el-container>
 				<el-container>
+					<el-header height="250">Header</el-header>
 					<el-main>
 						<router-view />
 					</el-main>
-					<el-footer>Footer</el-footer>
+
 				</el-container>
 			</el-container>
 		</el-container>
+
+
+
 
 	</div>
 </template>
@@ -68,12 +67,16 @@
 
 
 <style>
+	body{
+		margin: 0;
+	}
 	#app {
 		font-family: Avenir, Helvetica, Arial, sans-serif;
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
 		text-align: center;
 		color: #2c3e50;
+		height: 100%;
 	}
 
 	#nav {
@@ -89,38 +92,44 @@
 		color: #42b983;
 	}
 
-	.el-header,
-	.el-footer {
-		background-color: #B3C0D1;
+	.el-header {
+		background-color: #ffffff;
 		color: #333;
 		text-align: center;
 		line-height: 60px;
+		/* overflow:auto; */
+		/* position:fixed; */
 	}
 
+
 	.el-aside {
-		background-color: #D3DCE6;
-		color: #333;
-		text-align: center;
-		line-height: 200px;
+		background-color: #ffffff;
+		color: #ffffff;
+		overflow:auto;
+		position:fixed;
+		/* text-align: center; */
+		/* line-height: 200px; */
 	}
 
 	.el-main {
 		background-color: #E9EEF3;
 		color: #333;
 		text-align: center;
-		line-height: 160px;
+		overflow:auto;
+		/* line-height: 160px; */
 	}
 
 	body>.el-container {
-		margin-bottom: 40px;
+		margin-bottom: 0px;
+		box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04)
 	}
 
-	.el-container:nth-child(5) .el-aside,
-	.el-container:nth-child(6) .el-aside {
-		line-height: 260px;
-	}
+	/* .el-container:nth-child(5) .el-aside, */
+	/* .el-container:nth-child(6) .el-aside { */
+		/* line-height: 260px; */
+	/* } */
 
-	.el-container:nth-child(7) .el-aside {
-		line-height: 320px;
-	}
+	/* .el-container:nth-child(7) .el-aside { */
+		/* line-height: 320px; */
+	/* } */
 </style>
